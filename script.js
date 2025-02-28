@@ -19,8 +19,8 @@ function addTask() {
 
   // Check if the input is not empty (truthy value)
   if (taskInput) {
-    // Add the task to the tasks array
-    tasks.push(taskInput);
+    // Add the task to the tasks array with its initial completion status
+    tasks.push({ text: taskInput, completed: false });
 
     // Clear the input field after adding the task
     document.getElementById("taskInput").value = "";
@@ -52,10 +52,19 @@ function displayTasks() {
     );
 
     // Set the inner HTML of the <li> element with task text and check mark for completion
-    li.innerHTML = `<span>${task}</span> <button class='btn btn-dark btn-sm complete-btn' data-index='${index}'>√</button>`;
+    li.innerHTML = `<span>${task.text}</span> <button class='btn btn-dark btn-sm complete-btn' data-index='${index}'>√</button>`;
+
+    // Apply completed class if task is marked as done
+    if (task.completed) {
+      li.classList.add("completed");
+    }
 
     // Toggle completion when clicking the check mark button
     li.querySelector(".complete-btn").addEventListener("click", function () {
+      // Update task completion state in the array
+      task.completed = !task.completed;
+
+      // Apply or remove the completed style
       li.classList.toggle("completed");
     });
 
