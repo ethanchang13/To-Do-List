@@ -2,7 +2,17 @@
 let tasks = [];
 
 // Add an event listener to add tasks to the add task btn
-document.getElementById("addTaskBtn").addEventListener("click", function () {
+document.getElementById("addTaskBtn").addEventListener("click", addTask);
+
+// Add event listener for "Enter" key to add task
+document
+  .getElementById("taskInput")
+  .addEventListener("keydown", function (event) {
+    if (event.key === "Enter") addTask();
+  });
+
+// Function to add a task
+function addTask() {
   // Storing text value from input box as a variable 'taskInput'
   let taskInput = document.getElementById("taskInput").value;
 
@@ -17,7 +27,7 @@ document.getElementById("addTaskBtn").addEventListener("click", function () {
     // Call function to update the task list display
     displayTasks();
   }
-});
+}
 
 // Function to display the tasks from tasks array in the UL
 function displayTasks() {
