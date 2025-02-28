@@ -4,3 +4,11 @@
   color: gray;
   opacity: 0.6;
 }
+
+/* Styling for complete and delete buttons */
+.complete-btn,
+.delete-btn {
+  width: 30px;
+  text-align: center;
+  padding: 3px 0;
+}

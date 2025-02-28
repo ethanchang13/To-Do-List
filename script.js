@@ -51,8 +51,14 @@ function displayTasks() {
       "align-items-center"
     );
 
-    // Set the inner HTML of the <li> element with task text and check mark for completion
-    li.innerHTML = `<span>${task.text}</span> <button class='btn btn-dark btn-sm complete-btn' data-index='${index}'>√</button>`;
+    // Set the inner HTML of the <li> element with task text, check mark for completion, and trash icon for deletion
+    li.innerHTML = `<span>${task.text}</span> 
+      <div>
+        <button class='btn btn-dark btn-sm complete-btn' data-index='${index}'>√</button>
+        <button class='btn btn-danger btn-sm delete-btn' data-index='${index}'>
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>`;
 
     // Apply completed class if task is marked as done
     if (task.completed) {
@@ -66,6 +72,12 @@ function displayTasks() {
 
       // Apply or remove the completed style
       li.classList.toggle("completed");
+    });
+
+    // Remove task when clicking the delete button
+    li.querySelector(".delete-btn").addEventListener("click", function () {
+      tasks.splice(index, 1);
+      displayTasks();
     });
 
     // Append the new task to the task list
