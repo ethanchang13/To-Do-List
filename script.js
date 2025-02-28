@@ -54,7 +54,9 @@ function displayTasks() {
     // Set the inner HTML of the <li> element with task text, check mark for completion, and trash icon for deletion
     li.innerHTML = `<span>${task.text}</span> 
       <div>
-        <button class='btn btn-dark btn-sm complete-btn' data-index='${index}'>√</button>
+        <button class='btn btn-dark btn-sm complete-btn' data-index='${index}'>
+          <i class="fa-solid fa-check"></i>
+        </button>
         <button class='btn btn-danger btn-sm delete-btn' data-index='${index}'>
           <i class="fas fa-trash"></i>
         </button>

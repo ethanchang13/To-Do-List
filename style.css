@@ -1,11 +1,196 @@
-/* Styles for completed tasks */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+body {
+  background: linear-gradient(135deg, #1e1e1e, #121212);
+  color: #e0e0e0;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Main Container */
+main {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Heading */
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #b0b0b0;
+  margin-bottom: 15px;
+}
+
+/* Task Input Field */
+#taskInput {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+}
+
+#taskInput::placeholder {
+  color: #b0b0b0;
+}
+
+#taskInput:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Task List */
+#taskList {
+  margin-top: 15px;
+}
+
+.list-group-item {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-group-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+}
+
+/* Completed Task */
 .completed {
   text-decoration: line-through;
-  color: gray;
+  color: #888888;
   opacity: 0.6;
 }
 
-/* Styling for complete and delete buttons */
+/* Button */
+.btn {
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  border: none;
+}
+
+#taskInput,
+#addTaskBtn {
+  height: 48px;
+}
+
+#addTaskBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+/* Add Task Button */
+#addTaskBtn {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+}
+
+#addTaskBtn:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+}
+
+/* Clear Task Button */
+#clearTaskBtn {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+}
+
+#clearTaskBtn:hover {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  box-shadow: 0 0 15px rgba(255, 65, 108, 0.5);
+}
+
+/* Complete and Delete Button */
+.complete-btn {
+  background: rgba(0, 150, 255, 0.3);
+  color: #00c6ff;
+  margin-bottom: 5px;
+}
+
+.complete-btn:hover {
+  background: rgba(0, 150, 255, 0.5);
+  box-shadow: 0 0 8px #00c6ff;
+}
+
+.delete-btn {
+  background: rgba(255, 65, 108, 0.3);
+  color: #ff416c;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 65, 108, 0.5);
+  box-shadow: 0 0 8px #ff416c;
+}
+
+.complete-btn,
+.delete-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  border-radius: 50%;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.3;
+}
+
+.complete-btn,
+.delete-btn {
+  width: 30px;
+  text-align: center;
+  padding: 3px 0;
+}
+
+/* Completed Tasks */
+.completed {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.2;
+}
+
+/* Complete and Delete Buttons */
 .complete-btn,
 .delete-btn {
   width: 30px;
