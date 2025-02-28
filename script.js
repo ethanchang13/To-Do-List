@@ -73,7 +73,7 @@ function displayTasks() {
       task.completed = !task.completed;
 
       // Apply or remove the completed style
-      li.classList.toggle("completed");
+      li.querySelector("span").classList.toggle("completed");
     });
 
     // Remove task when clicking the delete button

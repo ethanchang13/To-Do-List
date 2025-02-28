@@ -7,8 +7,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
+  padding: 0;
 }
 
 /* Main Container */
@@ -23,6 +24,14 @@ main {
   max-width: 500px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: auto;
+}
+
+/* Image */
+img {
+  height: 10vh;
+  width: 10vh;
+  margin-bottom: 25px;
 }
 
 /* Heading */
@@ -39,7 +48,7 @@ h3 {
   font-size: 18px;
   font-weight: 400;
   color: #b0b0b0;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 /* Task Input Field */
@@ -187,8 +196,8 @@ h3 {
 #taskList {
   max-height: 300px;
   overflow-y: auto;
-  padding-right: 5px; 
-} 
+  padding-right: 5px;
+}
 
 #taskList::-webkit-scrollbar {
   width: 6px;
