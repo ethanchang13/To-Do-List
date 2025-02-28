@@ -183,6 +183,26 @@ h3 {
   padding: 3px 0;
 }
 
+/* Task List Scrollbar */
+#taskList {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 5px; 
+} 
+
+#taskList::-webkit-scrollbar {
+  width: 6px;
+}
+
+#taskList::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+#taskList::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
 /* Completed Tasks */
 .completed {
   text-decoration: line-through;
