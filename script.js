@@ -8,6 +8,7 @@ document.getElementById("addTaskBtn").addEventListener("click", addTask);
 document
   .getElementById("taskInput")
   .addEventListener("keydown", function (event) {
+    // If "Enter" is pressed, add the task
     if (event.key === "Enter") addTask();
   });
 
@@ -56,6 +57,14 @@ function displayTasks() {
     // Append the new task to the task list
     taskList.appendChild(li);
   });
+  updateTaskCounter();
+}
+
+// Function to update task counter
+function updateTaskCounter() {
+  document.getElementById(
+    "taskCounter"
+  ).textContent = `Total Tasks: ${tasks.length}`;
 }
 
 // Function to remove a task from the list when the "√" button is clicked
