@@ -51,8 +51,13 @@ function displayTasks() {
       "align-items-center"
     );
 
-    // Set the inner HTML of the <li> element with task text and a remove item
-    li.innerHTML = `${task} <button class = 'btn btn-dark btn-sm' onclick='removeTask(${index})'>√</button>`;
+    // Set the inner HTML of the <li> element with task text and check mark for completion
+    li.innerHTML = `<span>${task}</span> <button class='btn btn-dark btn-sm complete-btn' data-index='${index}'>√</button>`;
+
+    // Toggle completion when clicking the check mark button
+    li.querySelector(".complete-btn").addEventListener("click", function () {
+      li.classList.toggle("completed");
+    });
 
     // Append the new task to the task list
     taskList.appendChild(li);
@@ -65,15 +70,6 @@ function updateTaskCounter() {
   document.getElementById(
     "taskCounter"
   ).textContent = `Total Tasks: ${tasks.length}`;
-}
-
-// Function to remove a task from the list when the "√" button is clicked
-function removeTask(index) {
-  // Remove the task at the given index from the array
-  tasks.splice(index, 1);
-
-  // Call the function to update the task list display
-  displayTasks();
 }
 
 // Event listener for the "Clear All Tasks" button
